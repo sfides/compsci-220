@@ -7,24 +7,34 @@ def problem_1(text_file):
         counter = 0
 
 def problem_2(text_file):
-    lines = 0
-    num = 0
-    valid = {}
-
+    egg_size = {1:0,
+                2:0,
+                3:0,
+                4:0,
+                5:0}
+    num_nests = len(text_file)
+    rounds = []
     for i in range(len(text_file)):
-        valid[text_file[i][0]] = [0,num] #grouping, num time occured
-        valid[text_file[i][1]] = [0,num]
-    for num_nest in range (len(text_file)):
-        for k in range(len(text_file)):
-            valid[text_file[k][0]][1] +=1  # grouping, num time occured
-            valid[text_file[k][1]][1] +=1
-            valid[text_file[k][0]][0] = num_nest  # grouping, num time occured
-            valid[text_file[k][1]][0] = num_nest
+        nest = text_file[i]
+        for key in egg_size:
+            if nest[0] == key:
+                egg_size[key] += 1
+                continue
+            if  nest[1] == key:
+                egg_size[key] += 1
+                continue
+            else:
+                egg_size[key] = 0
+        max_key = max(egg_size, key=egg_size.get)
+        rounds.append((max_key,egg_size[max_key]))
 
 
 
-    return valid
+    return rounds
 
+#if (nest[0] == text_file[n-1][0] or nest[0] == text_file[n-1][1]) and (nest[1] == text_file[n-1][0] or nest[1] == text_file[n-1][1]):
+#                    egg_size[nest[0]] += 1
+         #           egg_size[nest[1]] += 1
 example_input = ((3,5),
                  (4,5),
                  (1,3))
