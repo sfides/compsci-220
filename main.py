@@ -40,11 +40,6 @@ def problem_2(text_file):
 #                    egg_size[nest[0]] += 1
          #           egg_size[nest[1]] += 1
 example_input = ()
-#             if egg not in valid:
- #               lines += 1
-  #              lines = 0
-   #             valid[egg] = lines
-    #        if egg in valid:
-     #           valid[egg] += 1 ##
+
 print(problem_2(((3,5),(4,5),(1,3))))
 #((3,5),(4,5),(1,3))
