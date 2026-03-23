@@ -1,4 +1,5 @@
 import random
+import time
 random.seed(67)
 def partition1(a_list):#####pivot is first element
     pivot = a_list[0]
@@ -84,3 +85,7 @@ def rand_list(ID):
 
 
 ID = 5527093
+t = time.time()
+print(rand_list(ID))
+k = time.time()
+print(k-t)
